@@ -32,6 +32,17 @@ namespace BankManagement.Controllers
         }
 
         [HttpGet]
+        [Route("logout")]
+        public IActionResult LogOut()
+        {
+            HttpContext.Session.Clear();
+
+            return RedirectToAction("Index");
+
+
+        }
+
+        [HttpGet]
         [Route("auth")]
         public IActionResult Login()
         {
@@ -122,7 +133,7 @@ namespace BankManagement.Controllers
             user.PictureLink = uniqueFileName;
             _context.Update(user);
             _context.SaveChanges();
-            return RedirectToAction("UserProfile", "User");
+            return RedirectToAction("Index");
         }
 
 

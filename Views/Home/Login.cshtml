@@ -14,12 +14,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="~/mylayout/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="~/myLib/Layout/assets/images/favicon.ico">
 
     <!-- App css -->
-    <link href="~/mylayout/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/mylayout/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/mylayout/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/myLib/Layout/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/myLib/Layout/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/myLib/Layout/assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -35,7 +35,7 @@
                             <div class="card-body p-0 auth-header-box">
                                 <div class="text-center p-3">
                                     <a href="index.html" class="logo logo-admin">
-                                        <img src="~/mylayout/assets/images/logo-sm-dark.png" height="50" alt="logo" class="auth-logo">
+                                        <img src="~/myLib/Layout/assets/images/logo-sm-dark.png" height="50" alt="logo" class="auth-logo">
                                     </a>
                                     <h4 class="mt-3 mb-1 fw-semibold text-white font-18">Let's Get Started ABC Bank</h4>
                                     <p class="text-muted  mb-0">Sign in to continue to ABC Bank.</p>
@@ -91,25 +91,25 @@
                                     </div>
                                     <div class="tab-pane px-3 pt-3" id="Register_Tab" role="tabpanel">
                                         @*<form class="form-horizontal auth-form" action="index.html">*@
-
+                                            <form class="form-horizontal auth-form" action="index.html" id="register">
                                             <div class="form-group mb-2">
                                                 <label class="form-label" for="username">Username</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" name="username" id="username" placeholder="Enter username">
+                                                    <input type="text" class="form-control" name="UserName" id="UserName" placeholder="Enter username">
                                                 </div>
                                             </div><!--end form-group-->
 
                                             <div class="form-group mb-2">
                                                 <label class="form-label" for="useremail">Email</label>
                                                 <div class="input-group">
-                                                    <input type="email" class="form-control" name="email" id="useremail" placeholder="Enter Email">
+                                                    <input type="email" class="form-control" name="UserEmail" id="UserEmail" placeholder="Enter Email">
                                                 </div>
                                             </div><!--end form-group-->
 
                                             <div class="form-group mb-2">
                                                 <label class="form-label" for="userpassword">Password</label>
                                                 <div class="input-group">
-                                                    <input type="password" class="form-control" name="password" id="userpassword" placeholder="Enter password">
+                                                    <input type="password" class="form-control" name="Password" id="Password" placeholder="Enter password">
                                                 </div>
                                             </div><!--end form-group-->
 
@@ -119,13 +119,40 @@
                                                     <input type="password" class="form-control" name="conf-password" id="conf_password" placeholder="Enter Confirm Password">
                                                 </div>
                                             </div><!--end form-group-->
-
                                             <div class="form-group mb-2">
-                                                <label class="form-label" for="mo_number">Mobile Number</label>
+                                                <label class="form-label" for="UserPhone">Mobile Number</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" name="mobile number" id="mo_number" placeholder="Enter Mobile Number">
+                                                    <input type="text" class="form-control" name="UserPhone" id="UserPhone" placeholder="Enter Mobile Number">
                                                 </div>
                                             </div><!--end form-group-->
+
+                                            <div class="form-group mb-2">
+                                                <label class="form-label" for="FullName">Full Name</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" name="FullName" id="FullName" placeholder="Enter Full Name">
+                                                </div>
+                                            </div><!--end form-group-->
+                                            <div class="form-group mb-2">
+                                                <label class="form-label" for="UserAddress">Address</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" name="UserAddress" id="UserAddress" placeholder="Enter Address">
+                                                </div>
+                                            </div><!--end form-group-->
+                                            <div class="form-group mb-2">
+                                                <label class="form-label" for="NIDNumber">NID Number</label>
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" name="NIDNumber" id="NIDNumber" placeholder="Enter NID Number">
+                                                </div>
+                                            </div><!--end form-group-->
+                                            <div class="form-group mb-2">
+                                                <label class="form-label" for="BirthDate">BirthDay</label>
+                                                <div class="input-group">
+                                                    <input type="date" class="form-control" name="BirthDate" id="BirthDate" placeholder="Enter BirthDay">
+                                                </div>
+                                            </div><!--end form-group-->
+
+
+
 
                                             <div class="form-group row my-3">
                                                 <div class="col-sm-12">
@@ -138,10 +165,10 @@
 
                                             <div class="form-group mb-0 row">
                                                 <div class="col-12">
-                                                    <button class="btn btn-primary w-100 waves-effect waves-light" type="button">Register <i class="fas fa-sign-in-alt ms-1"></i></button>
+                                                    <button id="RegiBtn" class="btn btn-primary w-100 waves-effect waves-light" type="button">Register <i class="fas fa-sign-in-alt ms-1"></i></button>
                                                 </div><!--end col-->
                                             </div> <!--end form-group-->
-                                        @*</form><!--end form-->*@
+                                        </form><!--end form-->
                                        
                                     </div>
                                 </div>
@@ -161,11 +188,11 @@
     </div><!--end container-->
     <!-- End Log In page -->
     <!-- jQuery  -->
-    <script src="~/mylayout/assets/js/jquery.min.js"></script>
-    <script src="~/mylayout/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="~/mylayout/assets/js/waves.js"></script>
-    <script src="~/mylayout/assets/js/feather.min.js"></script>
-    <script src="~/mylayout/assets/js/simplebar.min.js"></script>
+    <script src="~/myLib/Layout/assets/js/jquery.min.js"></script>
+    <script src="~/myLib/Layout/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/myLib/Layout/assets/js/waves.js"></script>
+    <script src="~/myLib/Layout/assets/js/feather.min.js"></script>
+    <script src="~/myLib/Layout/assets/js/simplebar.min.js"></script>
     <script src="~/bms/home/auth/auth.js"></script>
 
 </body>

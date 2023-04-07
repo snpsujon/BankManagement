@@ -48,6 +48,38 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\ProfilePicture\0302a2fb-40cf-4013-a955-620015cfef7e_snpsujon_When_best_friends_Jack_and_Sam_stumble_upon_a_mysterio_6cf2e9da-a441-4252-ad94-6f121a87d091.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>BankManagement</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/BankManagement</BasePath>
+      <RelativePath>images\ProfilePicture\0302a2fb-40cf-4013-a955-620015cfef7e_snpsujon_When_best_friends_Jack_and_Sam_stumble_upon_a_mysterio_6cf2e9da-a441-4252-ad94-6f121a87d091.png</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\ProfilePicture\0302a2fb-40cf-4013-a955-620015cfef7e_snpsujon_When_best_friends_Jack_and_Sam_stumble_upon_a_mysterio_6cf2e9da-a441-4252-ad94-6f121a87d091.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\ProfilePicture\bd938dad-16fc-4d71-a0a2-d445b5b9732f_grid_0.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>BankManagement</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/BankManagement</BasePath>
+      <RelativePath>images\ProfilePicture\bd938dad-16fc-4d71-a0a2-d445b5b9732f_grid_0.png</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\ProfilePicture\bd938dad-16fc-4d71-a0a2-d445b5b9732f_grid_0.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\js\site.js))">
       <SourceType>Package</SourceType>
       <SourceId>BankManagement</SourceId>
