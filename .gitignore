@@ -1,3 +1,5 @@
 bin/
 obj/
 Migrations/
+
+!wwwroot/images/ProfilePicture/nopic.jpg
