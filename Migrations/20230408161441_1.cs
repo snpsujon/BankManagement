@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BankManagement.Migrations
 {
-    public partial class _2 : Migration
+    public partial class _1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -49,6 +49,8 @@ namespace BankManagement.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TransTypeID = table.Column<int>(type: "int", nullable: false),
                     BankAccID = table.Column<int>(type: "int", nullable: false),
+                    TransExtType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TransReason = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TransChargeAmount = table.Column<float>(type: "real", nullable: false),
                     TransAmount = table.Column<float>(type: "real", nullable: false),
                     TransTotalAmount = table.Column<float>(type: "real", nullable: false),
@@ -69,7 +71,7 @@ namespace BankManagement.Migrations
                 {
                     TransTypeID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TransType = table.Column<int>(type: "int", nullable: false),
+                    TransType = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedAT = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdatedAT = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CreatedBy = table.Column<int>(type: "int", nullable: true),
@@ -99,6 +101,34 @@ namespace BankManagement.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_usersBankAccTbls", x => x.BankAccID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "usersTbls",
+                columns: table => new
+                {
+                    UserID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserPhone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NIDNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PictureLink = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserTypeID = table.Column<int>(type: "int", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    InactiveReason = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedAT = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdatedAT = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedBy = table.Column<int>(type: "int", nullable: true),
+                    UpdatedBy = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_usersTbls", x => x.UserID);
                 });
 
             migrationBuilder.CreateTable(
@@ -135,6 +165,9 @@ namespace BankManagement.Migrations
 
             migrationBuilder.DropTable(
                 name: "usersBankAccTbls");
+
+            migrationBuilder.DropTable(
+                name: "usersTbls");
 
             migrationBuilder.DropTable(
                 name: "userTypeTbls");

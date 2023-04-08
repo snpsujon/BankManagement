@@ -25,9 +25,15 @@ namespace BankManagement.Controllers
         {
             if (HttpContext.Session.GetString("Email") == null)
             {
+                var user = _context.usersTbls.ToList();
+                if (user.Count == 0)
+                {
+                    DefultData();
+                }
                 return RedirectToAction("Login");
 
             }
+
             return View();
         }
 
@@ -187,6 +193,173 @@ namespace BankManagement.Controllers
                 }
             }
             return uniqueFileName;
+        }
+
+        public void DefultData()
+        {
+            //Admin User Create
+            UsersTbl userTbl = new UsersTbl
+            {
+                UserName = "admin",
+                UserEmail = "admin@abcbank.com",
+                UserPhone = "01700000000",
+                FullName = "Admin",
+                UserAddress = "Dhaka",
+                NIDNumber = "123456789",
+                BirthDate = DateTime.Now,
+                PictureLink = "nopic.jpg",
+                Password = "123456",
+                IsActive = true,
+                UserTypeID = 1,
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(userTbl);
+            _context.SaveChanges();
+
+            //Admin Bank account
+            UsersBankAccTbl bankAcc = new UsersBankAccTbl
+            {
+                UserID = userTbl.UserID,
+                BankAccNumber = DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + "/0000000001",
+                BankAccBalance = 999999999,
+                StatusID = 1,
+                BankAccTypeID = 2,
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(bankAcc);
+            _context.SaveChanges();
+            //User Type Tbl
+            UserTypeTbl userType = new UserTypeTbl
+            {
+                UserType = "Admin",
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(userType);
+            _context.SaveChanges();
+            UserTypeTbl userType1 = new UserTypeTbl
+            {
+                UserType = "Super Admin",
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(userType1);
+            _context.SaveChanges();
+            UserTypeTbl userType2 = new UserTypeTbl
+            {
+                UserType = "User",
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(userType2);
+            _context.SaveChanges();
+
+            //Status Table
+            StatusTbl status = new StatusTbl
+            {
+                Status = "Active",
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(status);
+            _context.SaveChanges();
+            StatusTbl status1 = new StatusTbl
+            {
+                Status = "Inactive",
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(status1);
+            _context.SaveChanges();
+            StatusTbl status2 = new StatusTbl
+            {
+                Status = "Paused",
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(status2);
+            _context.SaveChanges();
+            StatusTbl status3 = new StatusTbl
+            {
+                Status = "Pending",
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(status3);
+            _context.SaveChanges();
+            StatusTbl status4 = new StatusTbl
+            {
+                Status = "Success",
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(status4);
+            _context.SaveChanges();
+            StatusTbl status5 = new StatusTbl
+            {
+                Status = "Decline",
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(status5);
+            _context.SaveChanges();
+            StatusTbl status6 = new StatusTbl
+            {
+                Status = "Failed",
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(status6);
+            _context.SaveChanges();
+            StatusTbl status7 = new StatusTbl
+            {
+                Status = "Banned",
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(status7);
+            _context.SaveChanges();
+
+
+            //Bank Account Type
+            BankAccTypeTbl bankAccType = new BankAccTypeTbl
+            {
+                BankAccType = "Saving",
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(bankAccType);
+            _context.SaveChanges();
+            BankAccTypeTbl bankAccType1 = new BankAccTypeTbl
+            {
+                BankAccType = "Current",
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(bankAccType1);
+            _context.SaveChanges();
+
+            //Transaction Type
+            TransTypeTbl transactionType = new TransTypeTbl
+            {
+                TransType = "Debit",
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(transactionType);
+            _context.SaveChanges();
+            TransTypeTbl transactionType1 = new TransTypeTbl
+            {
+                TransType = "Credit",
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(transactionType1);
+            _context.SaveChanges();
+
+
         }
 
 

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BankManagement.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230408095706_5")]
-    partial class _5
+    [Migration("20230408161441_1")]
+    partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
