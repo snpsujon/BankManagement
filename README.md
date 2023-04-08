@@ -1,4 +1,17 @@
 
+<h1 align="center">
+  <br>
+  <a href="http://www.facebook.com/snpsuj0n"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/BankABCLogo.svg/1200px-BankABCLogo.svg.png" alt="ABC Bank" width="200"></a>
+  <br>
+  ABC Bank
+  <br>
+</h1>
+<p align="center">
+  <a href="#installation">Installation</a> •
+  <a href="#creating-dataBase">Creating DataBase</a> •
+  <a href="#usage">Usage</a> •
+  <a href="#contributing">Contributing</a>
+</p>
 # Bank Management
 
 For Uni Project.
@@ -22,7 +35,7 @@ add-migration 1
 ```
 You Will See Like This Message
 
-``` picture
+```screenshot
 Build started...
 Build succeeded.
 To undo this action, use Remove-Migration.
@@ -31,6 +44,13 @@ Then run Again this Command
 
 ```bash
 update-database
+```
+You will Get a Success Messege Like
+
+```screenshot
+Build started...
+Build succeeded.
+Done.
 ```
 
 ## Usage
