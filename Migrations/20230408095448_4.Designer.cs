@@ -4,14 +4,16 @@ using BankManagement.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BankManagement.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230408095448_4")]
+    partial class _4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,9 +101,6 @@ namespace BankManagement.Migrations
                         .HasColumnType("real");
 
                     b.Property<string>("TransExtType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TransReason")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("TransTotalAmount")

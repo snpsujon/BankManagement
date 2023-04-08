@@ -97,6 +97,40 @@ namespace BankManagement.Controllers
                 };
                 _context.Add(user);
                 _context.SaveChanges();
+                string LastBankAccNum = null;
+                var BankAccExist = _context.usersBankAccTbls.ToList();
+                if (BankAccExist.Count > 0)
+                {
+                    LastBankAccNum = _context.usersBankAccTbls.OrderByDescending(x => x.BankAccID).FirstOrDefault().BankAccNumber;
+
+                }
+
+                if (LastBankAccNum == null)
+                {
+
+                    LastBankAccNum = DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + "/0000000001";
+                }
+                else
+                {
+                    var split = LastBankAccNum.Split('/');
+                    var last = split[1];
+                    var lastNum = Convert.ToInt32(last);
+                    lastNum++;
+                    LastBankAccNum = DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + "/" + lastNum.ToString("0000000000");
+                }
+
+                UsersBankAccTbl bankAcc = new UsersBankAccTbl
+                {
+                    UserID = user.UserID,
+                    BankAccNumber = LastBankAccNum,
+                    BankAccBalance = 0,
+                    StatusID = 1,
+                    BankAccTypeID = 1,
+                    CreatedAT = DateTime.Now,
+                    CreatedBy = Convert.ToInt32(HttpContext.Session.GetString("UserID"))
+                };
+                _context.Add(bankAcc);
+                _context.SaveChanges();
                 return Json(1);
             }
             catch (Exception ex)

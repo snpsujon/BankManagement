@@ -140,7 +140,10 @@ C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcorea
 C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\BankManagement.TagHelpers.output.cache
 C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\BankManagement.RazorCoreGenerate.cache
 C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\Razor\Views\Home\Indexw.cshtml.g.cs
+C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\Razor\Views\Home\UserProfilePic.cshtml.g.cs
 C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_MyLayoutDash.cshtml.g.cs
@@ -154,6 +157,4 @@ C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcorea
 C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\BankManagement.dll
 C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\BankManagement.pdb
 C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\BankManagement.genruntimeconfig.cache
-C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\Razor\Views\Home\Indexw.cshtml.g.cs
-C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
-C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\Razor\Views\Home\UserProfilePic.cshtml.g.cs
+C:\Users\SNP Sujon\source\repos\BankManagement\BankManagement\obj\Debug\netcoreapp3.1\Razor\Views\Users\UserProfile.cshtml.g.cs

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BankManagement.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230407145927_1")]
+    [Migration("20230408090247_1")]
     partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace BankManagement.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("BankManagement.Models.UserTbl", b =>
+            modelBuilder.Entity("BankManagement.Models.UsersTbl", b =>
                 {
                     b.Property<int>("UserID")
                         .ValueGeneratedOnAdd()
