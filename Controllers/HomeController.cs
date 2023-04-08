@@ -96,7 +96,7 @@ namespace BankManagement.Controllers
                     NIDNumber = authVM.NIDNumber,
                     BirthDate = authVM.BirthDate,
                     Password = authVM.Password,
-                    UserTypeID = 2,
+                    UserTypeID = 3,
                     IsActive = true,
                     CreatedAT = DateTime.Now,
                     CreatedBy = Convert.ToInt32(HttpContext.Session.GetString("UserID"))
