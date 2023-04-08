@@ -12,14 +12,15 @@
   <a href="#usage">Usage</a> •
   <a href="#contributing">Contributing</a>
 </p>
+
 # Bank Management
 
 For Uni Project.
 
 ## Installation
 
-First Need to Change the Database Connection From appsettings.json
-Change the Server Name
+> First Need to Change the **Database** Connection From `appsettings.json`
+Change the Server Name as your Server from ***_SQL Server_***
 ```bash
 "ConnectionStrings": {
     "DefaultConnection": "Server=YourServerName;Database=BankManagement;Trusted_Connection=True;MultipleActiveResultSets=true"
@@ -28,24 +29,24 @@ Change the Server Name
 
 ## Creating DataBase
 
-Use the NuGet package manager to install the Database. From the topbar go to tools>NuGet Package Maneger>Package Maneger Console
+>Use the NuGet package manager to install the Database. From the topbar go to `tools>NuGet Package Manager>Package Manager Console`
 
 ```bash
 add-migration 1
 ```
-You Will See Like This Message
+>You Will See Like This Message
 
 ```screenshot
 Build started...
 Build succeeded.
 To undo this action, use Remove-Migration.
 ```
-Then run Again this Command
+>Then run Again this Command
 
 ```bash
 update-database
 ```
-You will Get a Success Messege Like
+>You will Get a Success Messege Like
 
 ```screenshot
 Build started...
@@ -55,7 +56,15 @@ Done.
 
 ## Usage
 
-
+> After Completing Installation Run the Project. There Has a Defualt User and Password for admin
+<br/> _UserName_ ▶︎ 
+```bash
+admin
+``` 
+> _Password_ ▶︎ 
+```bash
+123456
+``` 
 
 ## Contributing
 
