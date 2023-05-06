@@ -1,15 +1,17 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 
-namespace BankManagement.Models
+namespace BankManagement.ViewModel
 {
-    public class TransTbl
+    public class TransVM
     {
-        [Key]
         public int TransID { get; set; }
         public int TransTypeID { get; set; }
         public int FromBankAccID { get; set; }
         public int ToBankAccID { get; set; }
+        public string ToBankAccNumber { get; set; }
+        public string FromBankAccNumber { get; set; }
+        public string TrxType { get; set; }
+
 
         public string TransExtType { get; set; }
         public string TransReason { get; set; }

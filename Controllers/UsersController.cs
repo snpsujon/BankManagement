@@ -53,5 +53,24 @@ namespace BankManagement.Controllers
 
             return View(userinfo.FirstOrDefault());
         }
+
+        [HttpGet]
+        [Route("usersmanagement")]
+        public IActionResult UserManagement()
+        {
+            if (HttpContext.Session.GetString("Email") == null)
+            {
+                return RedirectToAction("Login", "Home", new { redirecturl = "usersmanagement" });
+            }
+            var users = _context.usersTbls.ToList();
+            return View(users);
+        }
+
+        [HttpGet]
+        [Route("404")]
+        public IActionResult NotFound()
+        {
+            return View();
+        }
     }
 }

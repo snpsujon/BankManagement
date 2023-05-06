@@ -1,0 +1,95 @@
+﻿@model IEnumerable<BankManagement.Models.UsersTbl>
+@{
+    ViewData["Title"] = "UserManagement";
+    Layout = "~/Views/Shared/_MyLayoutDash.cshtml";
+}
+
+<html>
+    <head>
+    <!-- DataTables -->
+    <link href="~/myLib/Layout/plugins/datatables/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/myLib/Layout/plugins/datatables/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <!-- Responsive datatable examples -->
+    <link href="~/myLib/Layout/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+    <body>
+
+
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Users</h4>
+                   
+                </div><!--end card-header-->
+                <div class="card-body">
+                    <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th>Birth of Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            @foreach(var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.FullName</td>
+                                    <td>@item.UserEmail</td>
+                                    <td>@item.UserPhone</td>
+                                    <td>@item.UserAddress</td>
+                                    <td>@item.BirthDate.ToString("dd MMMM yyyy")</td>
+                                    <td>
+                                        @if (item.IsActive)
+                                        {
+                                            <div class="btn-group" role="group">
+                                                <a href="#" class="btn btn-info">Info</a>
+                                                <a href="#" class="btn btn-success">Deactive</a>
+                                                <a href="#" class="btn btn-warning">Right</a>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="btn-group" role="group">
+                                                <a href="#" class="btn btn-info">Info</a>
+                                                <a href="#" class="btn btn-success">Active</a>
+                                                <a href="#" class="btn btn-warning">Right</a>
+                                            </div>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+
+    <!-- Required datatable js -->
+    <script src="~/myLib/Layout/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/dataTables.bootstrap5.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="~/myLib/Layout/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/buttons.bootstrap5.min.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/jszip.min.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/pdfmake.min.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/vfs_fonts.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/buttons.print.min.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/buttons.colVis.min.js"></script>
+    <!-- Responsive examples -->
+    <script src="~/myLib/Layout/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/responsive.bootstrap4.min.js"></script>
+    <script src="assets/pages/jquery.datatable.init.js"></script>
+    </body>
+</html>

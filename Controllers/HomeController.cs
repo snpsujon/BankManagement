@@ -173,6 +173,7 @@ namespace BankManagement.Controllers
             user.PictureLink = uniqueFileName;
             _context.Update(user);
             _context.SaveChanges();
+            HttpContext.Session.SetString("UserPicture", user.PictureLink);
             return RedirectToAction("Index");
         }
 

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<BankManagement.ViewModel.TransVM>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MyLayoutDash.cshtml";
+}
+
+
+<html>
+<head>
+    <!-- DataTables -->
+    <link href="~/myLib/Layout/plugins/datatables/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/myLib/Layout/plugins/datatables/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <!-- Responsive datatable examples -->
+    <link href="~/myLib/Layout/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Users</h4>
+
+                </div><!--end card-header-->
+                <div class="card-body">
+                    <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>From Account</th>
+                                <th>To Account</th>
+                                <th>Type</th>
+                                <th>Ammount</th>
+                                <th>Transection Time</th>
+                                @*<th>Action</th>*@
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.FromBankAccNumber</td>
+                                    <td>@item.ToBankAccNumber</td>
+                                    <td>@item.TrxType</td>
+                                    <td>@item.TransAmount</td>
+                                    <td>@item.CreatedAT?.ToString("dd MMMM yyyy hh:mm tt")</td>
+                                    @*<td>
+                                        
+                                    </td>*@
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+    
+    <!-- Required datatable js -->
+    <script src="~/myLib/Layout/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/dataTables.bootstrap5.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="~/myLib/Layout/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/buttons.bootstrap5.min.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/jszip.min.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/pdfmake.min.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/vfs_fonts.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/buttons.print.min.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/buttons.colVis.min.js"></script>
+    <!-- Responsive examples -->
+    <script src="~/myLib/Layout/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="~/myLib/Layout/plugins/datatables/responsive.bootstrap4.min.js"></script>
+    <script src="assets/pages/jquery.datatable.init.js"></script>
+</body>
+</html>

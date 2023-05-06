@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
     var model = {};
     $("#LoginBtn").click(function () {
-        debugger;
+
         model = {};
         model.UserName = $("#usernameL").val();
         model.Password = $("#userpasswordL").val()
@@ -27,11 +27,11 @@
     });
 
     $("#RegiBtn").click(function () {
-        debugger;
+
         model = $('#register').serialize();
         $.post("/register", model, function (data) {
             //window.location.href = "home/index";
-            debugger;
+
             window.location.reload();
         });
     });
