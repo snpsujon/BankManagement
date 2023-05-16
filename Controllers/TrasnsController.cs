@@ -22,6 +22,7 @@ namespace BankManagement.Controllers
         [Route("trans")]
         public IActionResult Index()
         {
+
             var alltrans = (from t in _context.transTbls.ToList()
                             join tt in _context.transTypeTbls.ToList() on t.TransTypeID equals tt.TransTypeID
                             join fb in _context.usersBankAccTbls.ToList() on t.FromBankAccID equals fb.BankAccID
@@ -116,8 +117,69 @@ namespace BankManagement.Controllers
                 }
             }
             //return Json("success");
+        }
 
-
+        [HttpGet]
+        [Route("mobilerecharge")]
+        public IActionResult MobileRecharge()
+        {
+            var userid = Convert.ToInt32(HttpContext.Session.GetString("UserID"));
+            var userinfo = (from u in _context.usersTbls
+                            join b in _context.usersBankAccTbls on u.UserID equals b.UserID
+                            join t in _context.userTypeTbls on u.UserTypeID equals t.UserTypeID
+                            join s in _context.statusTbls on b.StatusID equals s.StatusID
+                            join a in _context.bankAccTypeTbls on b.BankAccTypeID equals a.BankAccTypeID
+                            where u.UserID == userid
+                            select new UserProfileVM
+                            {
+                                UserID = u.UserID,
+                                UserName = u.UserName,
+                                UserEmail = u.UserEmail,
+                                UserPhone = u.UserPhone,
+                                FullName = u.FullName,
+                                UserAddress = u.UserAddress,
+                                NIDNumber = u.NIDNumber,
+                                BirthDate = u.BirthDate,
+                                PictureLink = u.PictureLink,
+                                Password = u.Password,
+                                Status = s.Status,
+                                BankAccType = a.BankAccType,
+                                UserType = t.UserType,
+                                BankAccNumber = b.BankAccNumber,
+                                BankAccBalance = b.BankAccBalance
+                            }).FirstOrDefault();
+            return View(userinfo);
+        }
+        [HttpGet]
+        [Route("paybill")]
+        public IActionResult ElectryBill()
+        {
+            var userid = Convert.ToInt32(HttpContext.Session.GetString("UserID"));
+            var userinfo = (from u in _context.usersTbls
+                            join b in _context.usersBankAccTbls on u.UserID equals b.UserID
+                            join t in _context.userTypeTbls on u.UserTypeID equals t.UserTypeID
+                            join s in _context.statusTbls on b.StatusID equals s.StatusID
+                            join a in _context.bankAccTypeTbls on b.BankAccTypeID equals a.BankAccTypeID
+                            where u.UserID == userid
+                            select new UserProfileVM
+                            {
+                                UserID = u.UserID,
+                                UserName = u.UserName,
+                                UserEmail = u.UserEmail,
+                                UserPhone = u.UserPhone,
+                                FullName = u.FullName,
+                                UserAddress = u.UserAddress,
+                                NIDNumber = u.NIDNumber,
+                                BirthDate = u.BirthDate,
+                                PictureLink = u.PictureLink,
+                                Password = u.Password,
+                                Status = s.Status,
+                                BankAccType = a.BankAccType,
+                                UserType = t.UserType,
+                                BankAccNumber = b.BankAccNumber,
+                                BankAccBalance = b.BankAccBalance
+                            }).FirstOrDefault();
+            return View(userinfo);
         }
 
 

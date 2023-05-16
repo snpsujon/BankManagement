@@ -103,6 +103,7 @@ namespace BankManagement.Controllers
                 };
                 _context.Add(user);
                 _context.SaveChanges();
+
                 string LastBankAccNum = null;
                 var BankAccExist = _context.usersBankAccTbls.ToList();
                 if (BankAccExist.Count > 0)

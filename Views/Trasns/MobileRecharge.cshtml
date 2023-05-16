@@ -1,5 +1,5 @@
 ﻿@model BankManagement.ViewModel.UserProfileVM
- @{
+@{
     ViewData["Title"] = "Transfer";
     Layout = "~/Views/Shared/_MyLayoutDash.cshtml";
 }
@@ -7,56 +7,56 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8" />
-        <title>Dastone - Admin & Dashboard Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="" name="author" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<head>
+    <meta charset="utf-8" />
+    <title>Dastone - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-       
 
-    </head>
 
-    <body>
+</head>
 
-                                            <form class="form-horizontal auth-form" id="transection">
+<body>
 
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Transfer</h4>
-                    
-                </div><!--end card-header-->
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="mb-3 row">
-                                <label for="example-text-input" class="col-sm-2 form-label align-self-center mb-lg-0 text-end">From Account</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" disabled readonly type="text" value="@Model.BankAccNumber">
+    <form class="form-horizontal auth-form" id="transection">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Transfer</h4>
+
+                    </div><!--end card-header-->
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="mb-3 row">
+                                    <label for="example-text-input" class="col-sm-2 form-label align-self-center mb-lg-0 text-end">From Account</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" disabled readonly type="text" value="@Model.BankAccNumber">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label for="example-text-input" class="col-sm-2 form-label align-self-center mb-lg-0 text-end">Ammount</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" required type="number" value="" id="trxamm" name="TransAmount">
-                                    <label> Available Balance <label id="balacelbl">@Model.BankAccBalance</label> </label>
+                                <div class="mb-3 row">
+                                    <label for="example-text-input" class="col-sm-2 form-label align-self-center mb-lg-0 text-end">Ammount</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" required type="number" value="" id="trxamm" name="TransAmount">
+                                        <label> Available Balance <label id="balacelbl">@Model.BankAccBalance</label> </label>
+                                    </div>
                                 </div>
+
                             </div>
 
-                        </div>
-                        
 
-                        <div class="col-lg-6">
-                            <div class="mb-3 row">
-                                <label for="example-url-input" class="col-sm-2 form-label align-self-center mb-lg-0 text-end">To Account</label>
-                                <div class="col-sm-10">
+                            <div class="col-lg-6">
+                                <div class="mb-3 row">
+                                    <label for="example-url-input" class="col-sm-2 form-label align-self-center mb-lg-0 text-end">To Account</label>
+                                    <div class="col-sm-10">
                                         <input class="form-control" required type="text" value="" id="trxtoacc" name="ToBankAccNumber">
+                                    </div>
                                 </div>
-                            </div>
                                 <div class="mb-3 row">
                                     <label for="example-url-input" class="col-sm-2 form-label align-self-center mb-lg-0 text-end">Reason</label>
                                     <div class="col-sm-10">
@@ -65,33 +65,33 @@
                                 </div>
 
                             </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
                         </div>
-                        <div class="col-lg-4">
-                            <div class="mb-3 row">
-                                <div class="col-sm-10">
-                                    <button id="submit" type="submit" class="btn btn-primary" disabled> Procced </button>
+                        <div class="row">
+                            <div class="col-lg-4">
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="mb-3 row">
+                                    <div class="col-sm-10">
+                                        <button id="submit" type="submit" class="btn btn-primary" disabled> Procced </button>
+                                    </div>
                                 </div>
+
                             </div>
 
                         </div>
-
-                    </div>
-                </div><!--end card-body-->
-            </div><!--end card-->
-        </div><!--end col-->
-    </div><!--end row-->
+                    </div><!--end card-body-->
+                </div><!--end card-->
+            </div><!--end col-->
+        </div><!--end row-->
     </form>
 
     @section Scripts
-    {
-    <script src="~/myLib/Layout/assets/js/jquery.min.js"></script>
-    <script src="~/bms/trans/transc.js"></script>
-    <script>
+        {
+        <script src="~/myLib/Layout/assets/js/jquery.min.js"></script>
+        <script src="~/bms/trans/transc.js"></script>
+        <script>
             $(document).ready(function () {
-                
+
                 var model = {};
                 var avlbal = $("#balacelbl").text();
                 $("#trxamm").change(function () {
@@ -104,7 +104,7 @@
                         $('#submit').prop('disabled', true);
                         return false;
                     }
-                    else{
+                    else {
                         $('#submit').prop('disabled', false);
                     }
                 });
@@ -121,15 +121,15 @@
                     }
                 });
 
-                $("#submit").click(function(e){
+                $("#submit").click(function (e) {
                     debugger;
                     e.preventDefault();
                     var amm = $("#trxamm").val();
                     var toacc = $("#trxtoacc").val();
-                    if(amm == "" || amm == null){
+                    if (amm == "" || amm == null) {
                         alert("Please Enter Ammount");
                         return false;
-                    } else if (parseFloat(amm) < 10){
+                    } else if (parseFloat(amm) < 10) {
                         alert("Minimum Transection ammout is 10");
                         return false;
                     }
@@ -138,7 +138,7 @@
                         alert("Please Enter Account Number");
                         return false;
                     }
-                    
+
                     model = $('#transection').serialize();
                     console.log(model);
                     $.post("/transfer", model, function (data) {
@@ -152,14 +152,14 @@
                         }
                         //window.location.href = "home/index";
                     });
-                        //window.location.reload();
-                    
-                    
+                    //window.location.reload();
+
+
                 });
 
             });
-    </script>
+        </script>
     }
-    </body>
+</body>
 
 </html>
