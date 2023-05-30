@@ -31,8 +31,14 @@
         model = $('#register').serialize();
         $.post("/register", model, function (data) {
             //window.location.href = "home/index";
+            if (data.success) {
+                window.location.reload();
+            }
+            else {
+                alert(data.message);
+            }
 
-            window.location.reload();
+
         });
     });
 

@@ -92,6 +92,11 @@ namespace BankManagement.Controllers
         {
             try
             {
+                var isUser = _context.usersTbls.Where(x => x.UserName == authVM.UserName).FirstOrDefault();
+                if (isUser != null)
+                {
+                    return Json(new { success = false, message = "Duplicate UserName" });
+                }
                 UsersTbl user = new UsersTbl
                 {
                     UserName = authVM.UserName,
@@ -144,7 +149,7 @@ namespace BankManagement.Controllers
                 };
                 _context.Add(bankAcc);
                 _context.SaveChanges();
-                return Json(1);
+                return Json(new { success = true, message = "User Create Successfully" });
             }
             catch (Exception ex)
             {
