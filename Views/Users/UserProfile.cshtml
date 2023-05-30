@@ -2,6 +2,12 @@
 @{
     ViewData["Title"] = "UserProfile";
     Layout = "~/Views/Shared/_MyLayoutDash.cshtml";
+    var usertype = Context.Session.GetString("UserType");
+    var validation = "";
+    if (usertype == "1")
+    {
+        validation = "disabled readonly";
+    }
 }
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -168,7 +174,7 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label class="form-control-label" for="input-email">Email address</label>
-                                                <input type="email" name="UserEmail" id="input-email" class="form-control form-control-alternative" placeholder="@Model.UserEmail" value="@Model.UserEmail" disabled readonly>
+                                                <input type="email" name="UserEmail" id="input-email" class="form-control form-control-alternative" placeholder="@Model.UserEmail" value="@Model.UserEmail" @validation>
                                             </div>
                                         </div>
                                     </div>
