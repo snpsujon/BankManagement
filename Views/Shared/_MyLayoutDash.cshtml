@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>ABC Bank</title>
+    <title>PSN Bank</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="" name="author" />
@@ -84,13 +84,16 @@
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li><a href="/transfer">Transfer</a></li>
 
-                                <li>
-                                    <a href="javascript: void(0);"><i class="ti-control-record"></i>Bill Pay <span class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
-                                    <ul class="nav-second-level" aria-expanded="false">
-                                        <li><a href="/mobilerecharge">Mobile Recharge</a></li>
-                                        <li><a href="/paybill">Electricity</a></li>
-                                    </ul>
-                                </li>
+                                @if(usertype == "3")
+                                {
+                                    <li>
+                                        <a href="javascript: void(0);"><i class="ti-control-record"></i>Bill Pay <span class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
+                                        <ul class="nav-second-level" aria-expanded="false">
+                                            <li><a href="/mobilerecharge">Mobile Recharge</a></li>
+                                            <li><a href="/paybill">Electricity</a></li>
+                                        </ul>
+                                    </li>
+                                }
 
                                 
                             </ul>
@@ -157,8 +160,8 @@
             <footer class="footer text-center text-sm-start">
                 &copy; <script>
                            document.write(new Date().getFullYear())
-                </script> ABC Bank <span class="text-muted d-none d-sm-inline-block float-end">
-                    Crafted with <i class="mdi mdi-heart text-danger"></i> by SNPSUJON
+                </script> PSN Bank <span class="text-muted d-none d-sm-inline-block float-end">
+                    Crafted with <i class="mdi mdi-heart text-danger"></i> by Team PSN
                 </span>
             </footer><!--end footer-->
         </div>

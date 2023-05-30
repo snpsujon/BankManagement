@@ -1,9 +1,9 @@
 
 <h1 align="center">
   <br>
-  <a href="http://www.facebook.com/snpsuj0n"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/BankABCLogo.svg/1200px-BankABCLogo.svg.png" alt="ABC Bank" width="200"></a>
+  <a href="http://www.facebook.com/snpsuj0n"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/BankABCLogo.svg/1200px-BankABCLogo.svg.png" alt="PSN Bank" width="200"></a>
   <br>
-  ABC Bank
+  PSN Bank
   <br>
 </h1>
 <p align="center">

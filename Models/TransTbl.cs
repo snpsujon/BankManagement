@@ -12,6 +12,10 @@ namespace BankManagement.Models
         public int ToBankAccID { get; set; }
 
         public string TransExtType { get; set; }
+        public string MobileNumber { get; set; }
+        public string Oparator { get; set; }
+        public string OparatorType { get; set; }
+
         public string TransReason { get; set; }
         public float TransChargeAmount { get; set; }
         public float TransAmount { get; set; }

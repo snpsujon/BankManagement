@@ -123,6 +123,10 @@ namespace BankManagement.Controllers
         [Route("mobilerecharge")]
         public IActionResult MobileRecharge()
         {
+            if (HttpContext.Session.GetString("Email") == null)
+            {
+                return RedirectToAction("Login", "Home", new { redirecturl = "mobilerecharge" });
+            }
             var userid = Convert.ToInt32(HttpContext.Session.GetString("UserID"));
             var userinfo = (from u in _context.usersTbls
                             join b in _context.usersBankAccTbls on u.UserID equals b.UserID
@@ -149,6 +153,44 @@ namespace BankManagement.Controllers
                                 BankAccBalance = b.BankAccBalance
                             }).FirstOrDefault();
             return View(userinfo);
+        }
+        [HttpPost]
+        [Route("mobilerecharge")]
+        public JsonResult MobileRecharge(TransVM model)
+        {
+            var userid = Convert.ToInt32(HttpContext.Session.GetString("UserID"));
+            var userbank = _context.usersBankAccTbls.Where(x => x.UserID == userid).FirstOrDefault();
+            if (model.MobileNumber == null)
+            {
+                return Json(new { success = false, message = "Invalid Phone Number" });
+            }
+            else
+            {
+                if (userbank.BankAccBalance < model.TransAmount)
+                {
+                    return Json(new { success = false, message = "Insufficient Balance" });
+                }
+                else
+                {
+                    userbank.BankAccBalance = userbank.BankAccBalance - model.TransAmount;
+                    _context.Update(userbank);
+                    var trans = new TransTbl
+                    {
+                        TransTypeID = 1,
+                        FromBankAccID = userbank.BankAccID,
+                        TransAmount = model.TransAmount,
+                        MobileNumber = model.MobileNumber,
+                        Oparator = model.Oparator,
+                        OparatorType = model.OparatorType,
+                        CreatedAT = DateTime.Now,
+                        CreatedBy = userid,
+                        TransReason = model.TransReason,
+                    };
+                    _context.Add(trans);
+                    _context.SaveChanges();
+                    return Json(new { success = true, message = "Transfer Successfull" });
+                }
+            }
         }
         [HttpGet]
         [Route("paybill")]

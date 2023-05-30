@@ -52,6 +52,12 @@ namespace BankManagement.Controllers
         [Route("auth")]
         public IActionResult Login()
         {
+            if (HttpContext.Session.GetString("Email") != null)
+            {
+
+                return RedirectToAction("Index");
+
+            }
             return View();
         }
         [HttpPost]
@@ -346,7 +352,7 @@ namespace BankManagement.Controllers
             //Transaction Type
             TransTypeTbl transactionType = new TransTypeTbl
             {
-                TransType = "Debit",
+                TransType = "Transfer",
                 CreatedAT = DateTime.Now,
                 CreatedBy = 1
             };
@@ -354,12 +360,21 @@ namespace BankManagement.Controllers
             _context.SaveChanges();
             TransTypeTbl transactionType1 = new TransTypeTbl
             {
-                TransType = "Credit",
+                TransType = "Mobile Recharge",
                 CreatedAT = DateTime.Now,
                 CreatedBy = 1
             };
             _context.Add(transactionType1);
             _context.SaveChanges();
+            TransTypeTbl transactionType2 = new TransTypeTbl
+            {
+                TransType = "Bill Payment",
+                CreatedAT = DateTime.Now,
+                CreatedBy = 1
+            };
+            _context.Add(transactionType2);
+            _context.SaveChanges();
+
 
 
         }

@@ -12,6 +12,10 @@ namespace BankManagement.ViewModel
         public string FromBankAccNumber { get; set; }
         public string TrxType { get; set; }
 
+        public string MobileNumber { get; set; }
+        public string Oparator { get; set; }
+        public string OparatorType { get; set; }
+
 
         public string TransExtType { get; set; }
         public string TransReason { get; set; }

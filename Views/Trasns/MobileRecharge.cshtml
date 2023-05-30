@@ -52,15 +52,32 @@
 
                             <div class="col-lg-6">
                                 <div class="mb-3 row">
-                                    <label for="example-url-input" class="col-sm-2 form-label align-self-center mb-lg-0 text-end">To Account</label>
+                                    <label for="example-url-input" class="col-sm-2 form-label align-self-center mb-lg-0 text-end">Mobile Number</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" required type="text" value="" id="trxtoacc" name="ToBankAccNumber">
+                                        <input class="form-control" required type="text" value="" id="MobileNumber" name="MobileNumber">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="example-url-input" class="col-sm-2 form-label align-self-center mb-lg-0 text-end">Reason</label>
+                                    <label for="example-url-input" class="col-sm-2 form-label align-self-center mb-lg-0 text-end">Operator</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" required type="text" value="" id="trxreason" name="TransReason">
+                                        <select class="form-control" required id="Oparator" name="Oparator">
+                                            <option value="grameenphone">Grameenphone</option>
+                                            <option value="banglalink">Banglalink</option>
+                                            <option value="robi">Robi</option>
+                                            <option value="airtel">Airtel</option>
+                                            <option value="teletalk">Teletalk</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div class="mb-3 row">
+                                    <label for="example-url-input" class="col-sm-2 form-label align-self-center mb-lg-0 text-end">Type</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" required id="OparatorType" name="OparatorType">
+                                            <option value="prepaid">Prepaid</option>
+                                            <option value="post">PostPaid</option>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -108,24 +125,24 @@
                         $('#submit').prop('disabled', false);
                     }
                 });
-                $("#trxtoacc").change(function () {
-                    //var avlbal = $("#balacelbl").text();
-                    var amm = $("#trxtoacc").val();
-                    if (amm == "" || amm == null) {
-                        alert("Please Enter Account Number");
-                        $('#submit').prop('disabled', true);
-                        return false;
-                    }
-                    else {
-                        $('#submit').prop('disabled', false);
-                    }
-                });
+                //$("#trxtoacc").change(function () {
+                //    //var avlbal = $("#balacelbl").text();
+                //    var amm = $("#trxtoacc").val();
+                //    if (amm == "" || amm == null) {
+                //        alert("Please Enter Account Number");
+                //        $('#submit').prop('disabled', true);
+                //        return false;
+                //    }
+                //    else {
+                //        $('#submit').prop('disabled', false);
+                //    }
+                //});
 
                 $("#submit").click(function (e) {
                     debugger;
                     e.preventDefault();
                     var amm = $("#trxamm").val();
-                    var toacc = $("#trxtoacc").val();
+                    //var toacc = $("#trxtoacc").val();
                     if (amm == "" || amm == null) {
                         alert("Please Enter Ammount");
                         return false;
@@ -134,18 +151,18 @@
                         return false;
                     }
 
-                    if (toacc == "" || toacc == null) {
-                        alert("Please Enter Account Number");
-                        return false;
-                    }
+                    //if (toacc == "" || toacc == null) {
+                    //    alert("Please Enter Account Number");
+                    //    return false;
+                    //}
 
                     model = $('#transection').serialize();
                     console.log(model);
-                    $.post("/transfer", model, function (data) {
+                    $.post("/mobilerecharge", model, function (data) {
                         debugger;
                         if (data.success) {
                             alert(data.message);
-                            window.location.href = "/transfer";
+                            window.location.href = "/mobilerecharge";
                         }
                         else {
                             alert(data.message);
